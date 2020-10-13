@@ -1,0 +1,21 @@
+.Counter {
+    align-content: center;
+}
+
+.image img {
+    width: 150px;
+    height: 150px;
+}
+
+.image img:active {
+    animation: Button-pressed 0.1s linear;
+}
+
+@keyframes Button-pressed {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}
