@@ -5,6 +5,9 @@ function Blog() {
     return (
         <div>
             <Header text="Blog Arkashi Omegovicha (o testirovanii)"/>
+            <div>
+                Poka s testirovaniem ne ochen'...
+            </div>
         </div>
     )
 }

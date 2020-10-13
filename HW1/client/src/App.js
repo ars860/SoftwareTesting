@@ -9,11 +9,12 @@ import {AuthContext} from "./context/auth";
 import PrivateRoute from "./PrivateRoute";
 import Logout from "./Logout"
 import Blog from "./blog/Blog";
+import NotFound from "./NotFound";
 
 
 function App() {
-    const [authenticated, setAuthenticated] = useState(true)
-    const [email, setEmail] = useState("undefined")
+    const [authenticated, setAuthenticated] = useState(false)
+    const [email, setEmail] = useState(undefined)
 
     return (
         <AuthContext.Provider value={{
@@ -38,6 +39,9 @@ function App() {
                         <PrivateRoute exact path="/blog">
                             <Blog/>
                         </PrivateRoute>
+                        <Route path="*">
+                            <NotFound/>
+                        </Route>
                     </Switch>
                 </BrowserRouter>
             </div>
