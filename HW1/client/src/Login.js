@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import LoginService from "./service/LoginService";
 import "./Login.css";
 
+//TODO get rid of react-bootstrap
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

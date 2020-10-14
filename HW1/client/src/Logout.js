@@ -8,7 +8,7 @@ function Logout() {
     useEffect(() => auth.set(false, undefined), [auth])
     
     return (
-        <Redirect to="/" />
+        <Redirect to="/login" />
     )
 }
 

@@ -4,7 +4,7 @@ import Header from "./Header";
 function Blog() {
     return (
         <div>
-            <Header text="Blog Arkashi Omegovicha (o testirovanii)"/>
+            <Header text="Blog Arkashi (o testirovanii)"/>
             <div>
                 Poka s testirovaniem ne ochen'...
             </div>
