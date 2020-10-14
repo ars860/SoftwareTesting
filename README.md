@@ -2,10 +2,10 @@
 To start server:
 ```
 $ cd server
-$ npm run
+$ node app.js
 ```
 To start client:
 ```
 $ cd client
-$ npm run
+$ npm start
 ```
