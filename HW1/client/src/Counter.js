@@ -20,7 +20,7 @@ function Counter() {
     return (
         <div className="Counter">
             <div className="image" onClick={onClick}>
-                <img src={button} />
+                <img src={button}  alt="button"/>
             </div>
             {counter}
         </div>

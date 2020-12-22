@@ -3,5 +3,11 @@
 }
 
 .button {
+    display: block;
+    margin-top: 5px;
+}
 
+.login-form {
+    display: flex;
+    flex-direction: column;
 }

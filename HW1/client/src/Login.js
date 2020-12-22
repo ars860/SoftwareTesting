@@ -1,11 +1,9 @@
 import React, {useCallback, useState} from "react";
-import {Button, FormGroup, FormControl} from "react-bootstrap";
 import {useAuth} from "./context/auth";
 import {Link} from "react-router-dom";
 import LoginService from "./service/LoginService";
 import "./Login.css";
 
-//TODO get rid of react-bootstrap
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -16,10 +14,6 @@ export default function Login() {
     function validateForm() {
         return email.length > 0 && password.length > 0;
     }
-
-    // function handleSubmit(event) {
-    //     event.preventDefault();
-    // }
 
     const handleSubmit = useCallback((e) => {
         e.preventDefault()
@@ -45,27 +39,16 @@ export default function Login() {
 
     return (
         <div className="Login">
-            <form onSubmit={handleSubmit}>
-                <FormGroup controlId="email">
-                    <div>Email</div>
-                    <FormControl
-                        autoFocus
-                        type="email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                </FormGroup>
-                <FormGroup controlId="password">
-                    <div>Password</div>
-                    <FormControl
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                        type="password"
-                    />
-                </FormGroup>
-                <Button className="button" block disabled={!validateForm()} type="submit">
+            <form className="login-form" onSubmit={handleSubmit}>
+                <div>Email</div>
+                <input onChange={e => setEmail(e.target.value)} type="email"/>
+
+                <div>Password</div>
+                <input onChange={e => setPassword(e.target.value)} type="password"/>
+
+                <button className="button" disabled={!validateForm()} type="submit">
                     Login
-                </Button>
+                </button>
             </form>
             <div className="error">
                 {error}

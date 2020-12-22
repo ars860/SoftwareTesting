@@ -7,19 +7,17 @@ import Logout from "../Logout";
 import {MemoryRouter} from "react-router";
 import {act} from "react-dom/test-utils";
 
-global.fetch = jest.fn((path, init) => {
-        return Promise.resolve({
-            json: () => {
-                const body = JSON.parse(init.body)
-                let res = {authenticated: false};
-                if (body.email === "valid@email") {
-                    res.authenticated = true;
-                }
-                return Promise.resolve(res)
-            },
-        })
+
+beforeAll(() => {
+        LoginService.login = (email, _) => {
+            // console.log(email)
+            if (email === "valid@email") {
+                return Promise.resolve({authenticated: true})
+            }
+            return Promise.resolve({authenticated: false})
+        }
     }
-);
+)
 
 describe("LoginService tests", () => {
     it('should receive {authenticated: false} on some random email/password', function () {
@@ -32,15 +30,13 @@ describe("LoginService tests", () => {
     });
 })
 
-//TODO: this test doesn't work
-// look at some act() shenanigans
 describe("Login page tests", () => {
     it('should render login form if not authenticated', function () {
         const login = mount(<Login/>);
 
-        expect(login.findWhere(n => n.prop('controlId') === 'email').exists()).toBe(true)
-        expect(login.findWhere(n => n.prop('controlId') === 'password').exists()).toBe(true)
-        expect(login.findWhere(n => n.name() === 'Button' && n.text() === 'Login').exists()).toBe(true)
+        expect(login.findWhere(n => n.text() === 'Email').exists()).toBe(true)
+        expect(login.findWhere(n => n.text() === 'Password').exists()).toBe(true)
+        expect(login.findWhere(n => n.name() === 'button' && n.text() === 'Login').exists()).toBe(true)
     });
 
     it('should render logout link if authenticated', function () {
@@ -56,10 +52,11 @@ describe("Login page tests", () => {
         expect(login.findWhere(n => n.name() === 'Link' && n.prop('to') === '/logout' && n.text() === 'Logout').exists()).toBe(true)
     });
 
-    it('should authenticate on click', function () {
+    it('should authenticate on click', async function () {
         let numberOfCalls = 0;
         const context = {
-            authenticated: false, email: undefined, set: (x, y) => {
+            authenticated: false, email: undefined, set: (x, y) =>
+            {
                 act(() => {
                     console.log("a");
                     numberOfCalls++;
@@ -67,7 +64,7 @@ describe("Login page tests", () => {
             }
         }
 
-        const login = mount(
+        let login = mount(
             <MemoryRouter>
                 <AuthContext.Provider value={context}>
                     <Login/>
@@ -76,12 +73,13 @@ describe("Login page tests", () => {
         );
 
         act(() => {
-            login.find("#email").simulate('change', {target: {value: "valid@email"}})
+            login.find('[type="email"]').prop('onChange')({target: {value: 'valid@email'}}) //.simulate('change', {target: {value: 'valid@email'}})
         })
         act(() => {
-            login.find('#password').simulate('change', {target: {value: "12345"}})
+            login.find('[type="password"]').prop('onChange')({target: {value: '12345'}})
         })
-        act(() => {
+
+        await act(async () => {
             login.find('form').simulate('submit')
         })
 

@@ -12,7 +12,8 @@ let counter = 0;
 
 const users = [
     {email: "Arkasha@ma.il", password: "12345"},
-    {email: "Aba@Caba", password: "menya_ne_vzlomat!"}
+    {email: "Aba@Caba", password: "menya_ne_vzlomat!"},
+    {email: "admi@n", password: "admin"}
 ]
 
 
