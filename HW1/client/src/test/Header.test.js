@@ -2,7 +2,6 @@ import React from "react";
 import Header from "../Header";
 import {mount} from "enzyme";
 import {MemoryRouter} from "react-router-dom";
-import PropTypes from "prop-types";
 import {AuthContext} from "../context/auth";
 
 describe('Header tests', () => {

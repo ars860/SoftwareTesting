@@ -3,7 +3,7 @@ import LoginService from "../service/LoginService";
 import {mount} from "enzyme";
 import Login from "../Login";
 import {AuthContext} from "../context/auth";
-import Logout from "../Logout";
+// import Logout from "../Logout";
 import {MemoryRouter} from "react-router";
 import {act} from "react-dom/test-utils";
 
@@ -55,12 +55,8 @@ describe("Login page tests", () => {
     it('should authenticate on click', async function () {
         let numberOfCalls = 0;
         const context = {
-            authenticated: false, email: undefined, set: (x, y) =>
-            {
-                act(() => {
-                    console.log("a");
-                    numberOfCalls++;
-                })
+            authenticated: false, email: undefined, set: (x, y) => {
+                numberOfCalls++;
             }
         }
 
@@ -73,7 +69,7 @@ describe("Login page tests", () => {
         );
 
         act(() => {
-            login.find('[type="email"]').prop('onChange')({target: {value: 'valid@email'}}) //.simulate('change', {target: {value: 'valid@email'}})
+            login.find('[type="email"]').prop('onChange')({target: {value: 'valid@email'}})
         })
         act(() => {
             login.find('[type="password"]').prop('onChange')({target: {value: '12345'}})

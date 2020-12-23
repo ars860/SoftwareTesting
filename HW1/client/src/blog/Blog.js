@@ -6,7 +6,7 @@ function Blog() {
         <div>
             <Header text="Blog Arkashi (o testirovanii)"/>
             <div>
-                Poka s testirovaniem ne ochen'...
+                Poka s testirovaniem ne ochen&apos;...
             </div>
         </div>
     )
