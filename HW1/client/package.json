@@ -15,6 +15,8 @@
     "react-router-dom": "latest",
     "react-scripts": "latest",
     "cypress": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react": "latest",
     "eslint-plugin-cypress": "latest",
     "cypress-react-selector": "latest"
   },
