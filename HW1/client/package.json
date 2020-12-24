@@ -14,7 +14,6 @@
     "react-router": "latest",
     "react-router-dom": "latest",
     "react-scripts": "latest",
-    "cypress": "latest",
     "eslint": "latest",
     "eslint-plugin-react": "latest",
     "eslint-plugin-cypress": "latest",
@@ -40,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^6.2.0"
   }
 }

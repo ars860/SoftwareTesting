@@ -9,14 +9,4 @@ describe('App tests', () => {
         const app = mount(<App/>)
         expect(app.contains(<Header/>)).toBe(true);
     });
-
-    it('should render links to all pages', () => {
-        const app = mount(<App/>)
-
-        const pages = ['counter', 'logout', 'blog']
-
-        for (let page of pages) {
-            expect(app.find("[to='/" + page + "']").exists()).toBeTruthy()
-        }
-    })
 })
