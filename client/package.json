@@ -13,7 +13,7 @@
     "eslint-plugin-cypress": "latest",
     "eslint-plugin-react": "latest",
     "prop-types": "latest",
-    "react": "latest",
+    "react": "16.13.1",
     "react-dom": "latest",
     "react-router": "latest",
     "react-router-dom": "latest",
