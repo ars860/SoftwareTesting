@@ -1,7 +1,6 @@
 import React from "react"
 import 'cypress-react-selector'
 
-//TODO
 describe('Login e2e tests', () => {
     beforeEach(() => {
         cy.visit('localhost:3001/login')
@@ -9,6 +8,7 @@ describe('Login e2e tests', () => {
     })
 
     it('type something in forms and get message', () => {
+        cy.intercept('http://localhost:3000/login', {authenticated: false})
         const email = 'email@email'
         const password = 'password@123'
 
@@ -41,5 +41,23 @@ describe('Login e2e tests', () => {
         cy.get('#emailInput').clear()
 
         cy.get('button').should('to.be.disabled')
+    })
+
+    it("login and look", () => {
+        cy.intercept('http://localhost:3000/login', {authenticated: true})
+
+        cy.visit('localhost:3001/login')
+        cy.waitForReact()
+
+        const email = "12345@12345"
+        cy.get('#emailInput').type(email)
+        cy.get('#passwordInput').type("1")
+
+        cy.get('button').click()
+
+        cy.contains(email)
+        cy.contains("Counter")
+        cy.contains("Blog o testirovanii")
+        cy.contains("Logout")
     })
 })

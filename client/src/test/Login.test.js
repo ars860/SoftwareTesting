@@ -1,8 +1,8 @@
 import React from "react";
-import LoginService from "../service/LoginService";
+import LoginService from "../app/service/LoginService";
 import {mount} from "enzyme";
 import Login from "../app/Login";
-import {AuthContext} from "../context/auth";
+import {AuthContext} from "../app/context/auth";
 // import Logout from "../Logout";
 import {MemoryRouter} from "react-router";
 import {act} from "react-dom/test-utils";
@@ -37,7 +37,7 @@ describe("Login page tests", () => {
         expect(login.findWhere(n => n.text() === 'Email').exists()).toBe(true)
         expect(login.findWhere(n => n.text() === 'Password').exists()).toBe(true)
         expect(login.findWhere(n => n.name() === 'button' && n.text() === 'Login').exists()).toBe(true)
-    });
+    })
 
     it('should render logout link if authenticated', function () {
         const context = {authenticated: true, email: "email"}
@@ -50,7 +50,7 @@ describe("Login page tests", () => {
         );
 
         expect(login.findWhere(n => n.name() === 'Link' && n.prop('to') === '/logout' && n.text() === 'Logout').exists()).toBe(true)
-    });
+    })
 
     it('should authenticate on click', async function () {
         let numberOfCalls = 0;
@@ -69,10 +69,10 @@ describe("Login page tests", () => {
         );
 
         act(() => {
-            login.find('[type="email"]').prop('onChange')({target: {value: 'valid@email'}})
+            login.find('#emailInput').prop('onChange')({target: {value: 'valid@email'}})
         })
         act(() => {
-            login.find('[type="password"]').prop('onChange')({target: {value: '12345'}})
+            login.find('#passwordInput').prop('onChange')({target: {value: '12345'}})
         })
 
         await act(async () => {
@@ -80,5 +80,5 @@ describe("Login page tests", () => {
         })
 
         expect(numberOfCalls).toBe(1)
-    });
+    })
 })

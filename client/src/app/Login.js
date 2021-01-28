@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from "react";
-import {useAuth} from "../context/auth";
+import {useAuth} from "./context/auth";
 import {Link} from "react-router-dom";
-import LoginService from "../service/LoginService";
+import LoginService from "./service/LoginService";
 import "../styles/Login.css";
 import PropTypes from "prop-types";
 

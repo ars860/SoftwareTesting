@@ -5,10 +5,10 @@ import Header from "./Header"
 import {BrowserRouter, Route} from "react-router-dom";
 import {Switch} from "react-router";
 import Login from "./Login";
-import {AuthContext} from "../context/auth";
+import {AuthContext} from "./context/auth";
 import PrivateRoute from "./PrivateRoute";
 import Logout from "./Logout"
-import Blog from "../blog/Blog";
+import Blog from "./blog/Blog";
 import NotFound from "./NotFound";
 
 

@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import logo from "../images/logo.svg";
 import {Link} from "react-router-dom";
 import '../styles/Header.css'
-import {useAuth} from "../context/auth";
+import {useAuth} from "./context/auth";
 
 function Header() {
     const auth = useAuth()

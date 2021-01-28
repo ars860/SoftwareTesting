@@ -2,14 +2,13 @@ import React from "react";
 import Header from "../app/Header";
 import {mount} from "enzyme";
 import {MemoryRouter} from "react-router-dom";
-import {AuthContext} from "../context/auth";
+import {AuthContext} from "../app/context/auth";
 
 describe('Header tests', () => {
-    it("should contain only counter, login and register if not authenticated", () => {
+    it("should contain only login and register if not authenticated", () => {
         const header = mount((<MemoryRouter><Header/></MemoryRouter>))
 
-        expect(header.find('Link')).toHaveLength(3)
-        expect(header.findWhere(n => n.name() === 'Link' && n.prop('to') === '/counter').text()).toBe('Counter')
+        expect(header.find('Link')).toHaveLength(2)
         expect(header.findWhere(n => n.name() === 'Link' && n.prop('to') === '/login').text()).toBe('Login')
         expect(header.findWhere(n => n.name() === 'Link' && n.prop('to') === '/register').text()).toBe('Register')
     })

@@ -6,23 +6,23 @@
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
+    "cypress-react-selector": "latest",
     "enzyme": "latest",
     "enzyme-adapter-react-16": "latest",
+    "eslint": "latest",
+    "eslint-plugin-cypress": "latest",
+    "eslint-plugin-react": "latest",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-router": "latest",
     "react-router-dom": "latest",
-    "react-scripts": "latest",
-    "eslint": "latest",
-    "eslint-plugin-react": "latest",
-    "eslint-plugin-cypress": "latest",
-    "cypress-react-selector": "latest"
+    "react-scripts": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --testPathIgnorePatterns=src/test/cypress",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
