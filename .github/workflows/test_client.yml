@@ -27,8 +27,6 @@ jobs:
         npm install react-scripts
         npx react-scripts build
         npx react-scripts test --testPathIgnorePatterns=src/test/cypress
-        npx react-scripts start
-        npx cypress run
 
   cypress-run:
     runs-on: ubuntu-latest
@@ -37,7 +35,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Cypress run
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm start
