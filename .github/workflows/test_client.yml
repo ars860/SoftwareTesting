@@ -31,3 +31,5 @@ jobs:
         npm install react-scripts
         npx react-scripts build
         npx react-scripts test --testPathIgnorePatterns=src/test/cypress
+        npx react-scripts start
+        npx cypress run
