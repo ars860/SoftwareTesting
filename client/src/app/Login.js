@@ -43,7 +43,7 @@ export default function Login({register}) {
             })
         }
 
-    }, [auth, email, password])
+    }, [auth, email, password, register])
 
     if (auth.authenticated === true) {
         return (
