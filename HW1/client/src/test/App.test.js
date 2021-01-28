@@ -1,7 +1,7 @@
 import React from 'react';
-import App from '../App';
+import App from '../app/App';
 import {mount} from 'enzyme';
-import Header from "../Header";
+import Header from "../app/Header";
 import "../setupTests"
 
 describe('App tests', () => {

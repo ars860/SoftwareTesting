@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import './App.css';
+import '../styles/App.css';
 import Counter from "./Counter";
 import Header from "./Header"
 import {BrowserRouter, Route} from "react-router-dom";
 import {Switch} from "react-router";
 import Login from "./Login";
-import {AuthContext} from "./context/auth";
+import {AuthContext} from "../context/auth";
 import PrivateRoute from "./PrivateRoute";
 import Logout from "./Logout"
-import Blog from "./blog/Blog";
+import Blog from "../blog/Blog";
 import NotFound from "./NotFound";
 
 
@@ -27,8 +27,11 @@ function App() {
                 <BrowserRouter>
                     <Header/>
                     <Switch>
-                        <Route exact path='/login'>
-                            <Login/>
+                        <Route exact path={['/login', '']}>
+                            <Login register={false}/>
+                        </Route>
+                        <Route exact key='1' path='/register'>
+                            <Login register={true}/>
                         </Route>
                         <PrivateRoute exact path='/counter'>
                             <Counter/>

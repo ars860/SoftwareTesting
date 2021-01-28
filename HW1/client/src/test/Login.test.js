@@ -1,7 +1,7 @@
 import React from "react";
 import LoginService from "../service/LoginService";
 import {mount} from "enzyme";
-import Login from "../Login";
+import Login from "../app/Login";
 import {AuthContext} from "../context/auth";
 // import Logout from "../Logout";
 import {MemoryRouter} from "react-router";
@@ -32,7 +32,7 @@ describe("LoginService tests", () => {
 
 describe("Login page tests", () => {
     it('should render login form if not authenticated', function () {
-        const login = mount(<Login/>);
+        const login = mount(<MemoryRouter><Login register={false}/></MemoryRouter>);
 
         expect(login.findWhere(n => n.text() === 'Email').exists()).toBe(true)
         expect(login.findWhere(n => n.text() === 'Password').exists()).toBe(true)
@@ -44,7 +44,7 @@ describe("Login page tests", () => {
         const login = mount(
             <MemoryRouter>
                 <AuthContext.Provider value={context}>
-                    <Login/>
+                    <Login register={false}/>
                 </AuthContext.Provider>
             </MemoryRouter>
         );
@@ -63,7 +63,7 @@ describe("Login page tests", () => {
         let login = mount(
             <MemoryRouter>
                 <AuthContext.Provider value={context}>
-                    <Login/>
+                    <Login register={false}/>
                 </AuthContext.Provider>
             </MemoryRouter>
         );

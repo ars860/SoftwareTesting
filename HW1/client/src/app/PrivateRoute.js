@@ -1,6 +1,6 @@
 import React from "react";
 import {Route} from "react-router-dom";
-import {useAuth} from "./context/auth";
+import {useAuth} from "../context/auth";
 import PropTypes from "prop-types";
 
 function PrivateRoute({children: child, ...rest}) {

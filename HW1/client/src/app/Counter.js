@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import './Counter.css';
-import button from './images/button.png'
+import '../styles/Counter.css';
+import button from '../images/button.png'
 
 function Counter() {
     const [counter, setCounter] = useState(-1)

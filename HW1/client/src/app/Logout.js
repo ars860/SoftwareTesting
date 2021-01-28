@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {Redirect} from "react-router";
-import {useAuth} from "./context/auth";
+import {useAuth} from "../context/auth";
 
 function Logout() {
     const auth = useAuth()
