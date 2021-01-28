@@ -1,6 +1,5 @@
 node_modules
 .idea
 .eslintrc.json
-package-lock.json
 .eslintcache
 *.log
