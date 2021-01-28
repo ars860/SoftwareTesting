@@ -28,6 +28,7 @@ jobs:
       working-directory: ./client
       run: |
         npm install
+        np, install react-scripts
         react-scripts build
         react-scripts test --testPathIgnorePatterns=src/test/cypress
         cypress run
