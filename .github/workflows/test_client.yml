@@ -33,11 +33,11 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      working-directory: ./client
       - name: Checkout
         uses: actions/checkout@v1
 
       - name: Cypress run
+        working-directory: ./client
         uses: cypress-io/github-action@v1
         with:
           build: npm run build
