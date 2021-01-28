@@ -11,13 +11,17 @@ export default function Login({register}) {
     const [error, setError] = useState("")
     const auth = useAuth()
 
-
     function validateForm() {
         return email.length > 0 && password.length > 0;
     }
 
     const handleSubmit = useCallback((e) => {
         e.preventDefault()
+
+        if (email.indexOf('@') === -1) {
+            setError('Email should contain @!')
+            return
+        }
 
         if (register) {
             LoginService.register(email, password).then(res => {
@@ -53,10 +57,10 @@ export default function Login({register}) {
         <div className="Login">
             <form className="login-form" onSubmit={handleSubmit}>
                 <div>Email</div>
-                <input onChange={e => setEmail(e.target.value)} type="email"/>
+                <input id="emailInput" onChange={e => setEmail(e.target.value)} type="text"/>
 
                 <div>Password</div>
-                <input onChange={e => setPassword(e.target.value)} type="password"/>
+                <input id="passwordInput" onChange={e => setPassword(e.target.value)} type="password"/>
 
                 <button className="button" disabled={!validateForm()} type="submit">
                     {register ? "Register" : "Login"}
