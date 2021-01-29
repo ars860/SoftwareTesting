@@ -42,21 +42,21 @@ jobs:
           wait-on: http://localhost:3001
           working-directory: ./client
 
-  playwright-tests:
-    runs-on: ubuntu-latest
+  # playwright-tests:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+  #   steps:
+  #     - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+  #     - uses: actions/setup-node@v1
 
-      - uses: microsoft/playwright-github-action@v1
+  #     - uses: microsoft/playwright-github-action@v1
 
-      - name: Install dependencies and run tests
-        run: |
-          npm install
-          npx jest -i src/test/e2e/playwright/Counter.test.js
-        working-directory: ./client
+  #     - name: Install dependencies and run tests
+  #       run: |
+  #         npm install
+  #         npx jest -i src/test/e2e/playwright/Counter.test.js
+  #       working-directory: ./client
 
   test-java-server:
     runs-on: ubuntu-latest
