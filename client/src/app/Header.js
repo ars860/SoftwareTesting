@@ -12,12 +12,12 @@ function Header() {
             {!auth.authenticated &&
             <Fragment>
                 <div className="MenuItem">
-                    <Link to="/login">
+                    <Link to="/login" id="loginLink">
                         Login
                     </Link>
                 </div>
                 <div className="MenuItem">
-                    <Link to="/register">
+                    <Link to="/register" id="registerLink">
                         Register
                     </Link>
                 </div>
@@ -26,20 +26,20 @@ function Header() {
             {auth.authenticated &&
             <Fragment>
                 <div className="MenuItem">
-                    <Link to="/counter">
+                    <Link to="/counter" id="counterLink">
                         Counter
                     </Link>
                 </div>
                 <div className="MenuItem">
-                    <Link to="/blog">
+                    <Link to="/blog" id="blogLink">
                         Blog o testirovanii
                     </Link>
                 </div>
-                <div className="MenuItem">
+                <div className="MenuItem" id="email">
                     {auth.email}
                 </div>
                 <div className="MenuItem">
-                    <Link to="/logout">
+                    <Link to="/logout" id="logoutLink">
                         Logout
                     </Link>
                 </div>
