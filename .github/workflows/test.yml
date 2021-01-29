@@ -41,3 +41,14 @@ jobs:
           start: npm start
           wait-on: http://localhost:3001
           working-directory: ./client
+
+  test-java-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Maven tests run
+        run: |
+          ./mvnw build
+          ./mvnw test
