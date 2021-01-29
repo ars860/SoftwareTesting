@@ -52,10 +52,5 @@ jobs:
         with:
           java-version: 15
       - name: Build with Maven
-        run: |
-          npm install
-          npm install react-scripts
-          npx react-scripts build $
-          ../client/npx react-scripts
-          mvn --batch-mode --update-snapshots verify
+        run: mvn --batch-mode --update-snapshots verify
         working-directory: ./java-server
