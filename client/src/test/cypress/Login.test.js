@@ -60,4 +60,34 @@ describe('Login e2e tests', () => {
         cy.contains("Blog o testirovanii")
         cy.contains("Logout")
     })
+
+    it("login local storage test", () => {
+        cy.intercept('http://localhost:3000/login', {authenticated: true})
+
+        cy.visit('localhost:3001/login')
+        cy.waitForReact()
+
+        const email = "email@email"
+        cy.get('#emailInput').type(email)
+        cy.get('#passwordInput').type("1")
+
+        cy.get('button').click()
+
+        cy.reload()
+
+        cy.contains(email)
+        cy.contains("Counter")
+        cy.contains("Blog o testirovanii")
+        cy.contains("Logout")
+
+        cy.get('a[href="/logout"').first().click()
+
+        cy.contains('Login')
+        cy.contains('Register')
+
+        cy.reload()
+
+        cy.contains('Login')
+        cy.contains('Register')
+    })
 })
