@@ -4,13 +4,15 @@
 
 ### Main:
 ✅ Создана папка `client`  
-✅ Создано приложение на VueJS  
-✅ Есть 4 страницы, роутинг в Login Page  
+✅ Создано приложение на React  
+✅ Страницы, роутинг  
 ✅ Есть node.js бэкенд (express)  
-✅ Есть Unit (jest|vue/testutils), Component (testing-library/vue) и e2e(cypress|playwright) тесты
+✅ Есть Unit (jest|vue/testutils), Component (testing-library/vue)  
+✅ e2e(cypress) тесты  
+TODO: e2e(playwright) тесты  
 
 ### Advanced:
-✅ Приложение содержит авторизацию (passportJS)  
+✅ Приложение содержит авторизацию  
 ✅ Написаны тесты для проверки авторизации (e2e)  
 ✅ Существует нескольно наборов тестов (несколько suites)  
 
@@ -19,10 +21,11 @@
 
 ## Е2Е тестирование
 
-### Main:
+### Main:  
 ✅ Есть Cypress  
-✅ Есть Playwright  
-✅ Суммарно >5 тестов  
+TODO: Есть Playwright  
+✅ Суммарно >5 тестов на Cypress-е  
+TODO: Суммарно >5 тестов на Playwright-е  
 
 ### Advanced:
 ✅ Есть тесты, не проходящие авторизацию  
@@ -33,16 +36,16 @@
 ## Backend
 
 ### Main:
-✅ Сервис на Groovy + Spring + Postgres  
-✅ Есть несколько контроллеров (Game и Login)  
+✅ Сервис на Java + Spring + Postgres  
+✅ Есть несколько контроллеров (User и Counter)  
 ✅ Есть Unit тесты  
-✅ Используются TestContainers для тестирования логина  
-✅ Используется Mockito для GameService  
+TODO: Используются TestContainers для тестирования взаимодействия с бд  
+✅ Используется Mockito  
 ❌ Нет документации по дополнительным тестам  
 
 ### Advanced:
 ✅ Настроено взаимодействие фронтенда и бэкенда   
-✅ Присутствуют е2е тесты на авторизацию  
+TODO: Присутствуют е2е тесты на авторизацию  
 ❌ Нет Spring Test Configruation и переключения по ним  
 ❌ Нет генерации тестовой документации  
 
@@ -72,7 +75,7 @@
 ## Selenium:
 
 ### Main:
-✅ Есть e2e тесты с использованием Selenide.
+TODO: Есть e2e тесты с использованием Selenide.  
 
 ### Advanced:
 ❌
@@ -83,7 +86,7 @@
 ## Performance:
 
 ### Main:
-✅ [Воркшоп пройден](https://gitlab.com/tinkoff-performance-workshop-knisht)
+TODO: [Воркшоп пройден](https://gitlab.com/tinkoff-performance-workshop-knisht)  
 
 ### Advanced:
 ❌
