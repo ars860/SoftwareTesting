@@ -25,7 +25,7 @@ describe('Login e2e tests', () => {
         cy.get('a[href="/counter"]').click()
     })
 
-    it('dsadsa', () => {
+    it('just click the button', () => {
         cy.get('.image').click()
         cy.get('.Counter').should('have.text', 1)
 
