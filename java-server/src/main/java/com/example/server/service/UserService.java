@@ -3,11 +3,13 @@ package com.example.server.service;
 import com.example.server.domain.User;
 import com.example.server.domain.UserRepository;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class UserService {
+    @Getter
     private final UserRepository userRepository;
 
     public void addUser(String email, String password) {
