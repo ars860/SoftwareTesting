@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, {useState, useEffect} from 'react';
 import '../styles/App.css';
 import Counter from "./Counter";
 import Header from "./Header"
@@ -13,8 +14,23 @@ import NotFound from "./NotFound";
 
 
 function App() {
-    const [authenticated, setAuthenticated] = useState(false)
-    const [email, setEmail] = useState(undefined)
+    let localState = window.localStorage.getItem("user")
+
+    const [authenticated, setAuthenticated] = useState(localState === null ? false : localState !== undefined)
+    const [email, setEmail] = useState(localState)
+
+    useEffect(() => {
+        if (email === null) {
+            return
+        }
+        if (email === undefined) {
+            console.log("remove")
+            localStorage.removeItem("user")
+        } else {
+            localStorage.setItem("user", email)
+            setAuthenticated(true)
+        }
+    }, [email])
 
     return (
         <AuthContext.Provider value={{
