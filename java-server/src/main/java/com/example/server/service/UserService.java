@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class UsersService {
+public class UserService {
     private final UserRepository userRepository;
 
     public void addUser(String email, String password) {
