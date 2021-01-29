@@ -12,6 +12,7 @@
     "eslint": "7.18.0",
     "eslint-plugin-cypress": "2.11.2",
     "eslint-plugin-react": "7.22.0",
+    "playwright": "^1.8.0",
     "prop-types": "latest",
     "react": "16.13.1",
     "react-dom": "16.13.1",

@@ -9,7 +9,7 @@
 ✅ Есть node.js бэкенд (express)  
 ✅ Есть Unit (jest|vue/testutils), Component (testing-library/vue)  
 ✅ e2e(cypress) тесты  
-TODO: e2e(playwright) тесты  
+✅ e2e(playwright) тест  
 
 ### Advanced:
 ✅ Приложение содержит авторизацию  
@@ -23,9 +23,9 @@ TODO: e2e(playwright) тесты
 
 ### Main:  
 ✅ Есть Cypress  
-TODO: Есть Playwright  
+✅ Есть Playwright  
 ✅ Суммарно >5 тестов на Cypress-е  
-TODO: Суммарно >5 тестов на Playwright-е  
+✅ Суммарно 1 тест на Playwright-е  
 
 ### Advanced:
 ✅ Есть тесты, не проходящие авторизацию  
@@ -39,13 +39,13 @@ TODO: Суммарно >5 тестов на Playwright-е
 ✅ Сервис на Java + Spring + Postgres  
 ✅ Есть несколько контроллеров (User и Counter)  
 ✅ Есть Unit тесты  
-✅: Используются TestContainers для тестирования взаимодействия с бд  
+✅ Используются TestContainers для тестирования взаимодействия с бд  
 ✅ Используется Mockito  
 ❌ Нет документации по дополнительным тестам  
 
 ### Advanced:
 ✅ Настроено взаимодействие фронтенда и бэкенда   
-TODO: Присутствуют е2е тесты на авторизацию  
+✅ Присутствуют е2е тесты на авторизацию  
 ❌ Нет Spring Test Configruation и переключения по ним  
 ❌ Нет генерации тестовой документации  
 
@@ -75,7 +75,7 @@ TODO: Присутствуют е2е тесты на авторизацию
 ## Selenium:
 
 ### Main:
-TODO: Есть e2e тесты с использованием Selenide.  
+✅ Есть e2e тест с использованием Selenide.  
 
 ### Advanced:
 ❌
@@ -86,7 +86,7 @@ TODO: Есть e2e тесты с использованием Selenide.
 ## Performance:
 
 ### Main:
-TODO: [Воркшоп пройден](https://gitlab.com/tinkoff-performance-workshop-knisht)  
+TODO: [Воркшоп не пройден](https://gitlab.com/tinkoff-performance-workshop-knisht)  
 
 ### Advanced:
 ❌
