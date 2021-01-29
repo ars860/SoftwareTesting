@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --testPathIgnorePatterns=src/test/cypress",
+    "test": "react-scripts test --testPathIgnorePatterns=src/test/e2e",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
