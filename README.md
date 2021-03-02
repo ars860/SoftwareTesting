@@ -1,4 +1,4 @@
-# HW1: Simple Client/Server app
+# Simple Client/Server app
 To start server:
 ```
 $ cd server
